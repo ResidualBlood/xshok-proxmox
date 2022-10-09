@@ -5,7 +5,7 @@ fail2ban 增加 ssh 防护
 - XS_LYNIS="no"
 - XS_MOTD="no"
 
-fail2ban 增加 ssh 防护
+
 
 
 # xshok-proxmox :: eXtremeSHOK.com Proxmox (pve)
