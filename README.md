@@ -1,5 +1,5 @@
 # 魔改
-去除了 proxmox 判断
+去除了 proxmox 判断  
 fail2ban 增加 ssh 防护
 - XS_JOURNALD="no"
 - XS_LYNIS="no"
