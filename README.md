@@ -5,7 +5,12 @@ fail2ban 增加 ssh 防护
 - XS_LYNIS="no"
 - XS_MOTD="no"
 
-
+用法
+```
+wget https://raw.githubusercontent.com/ResidualBlood/xshok-proxmox/master/xs-install-post.env -c -O xs-install-post.env
+wget https://raw.githubusercontent.com/ResidualBlood/xshok-proxmox/master/install-post.sh -c -O install-post.sh
+bash install-post.sh
+```
 
 
 # xshok-proxmox :: eXtremeSHOK.com Proxmox (pve)
