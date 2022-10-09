@@ -215,10 +215,10 @@ export LANG="$XS_LANG"
 export LC_ALL="C"
 
 # enforce proxmox
-# if [ ! -f "/etc/pve/.version" ] ; then
-#   echo "ERROR: This script only supports Proxmox"
-#   exit 1
-# fi
+if [ ! -f "/etc/pve/.version" ] ; then
+  echo "ERROR: This script only supports Proxmox"
+  exit 1
+fi
 
 if [ -f "/etc/extremeshok" ] ; then
   echo "ERROR: Script can only be run once"
