@@ -215,10 +215,10 @@ export LANG="$XS_LANG"
 export LC_ALL="C"
 
 # enforce proxmox
-if [ ! -f "/etc/pve/.version" ] ; then
-  echo "ERROR: This script only supports Proxmox"
-  exit 1
-fi
+# if [ ! -f "/etc/pve/.version" ] ; then
+#   echo "ERROR: This script only supports Proxmox"
+#   exit 1
+# fi
 
 if [ -f "/etc/extremeshok" ] ; then
   echo "ERROR: Script can only be run once"
@@ -549,10 +549,21 @@ bantime = 3600
 findtime = 600
 EOF
 
-# cat <<EOF > /etc/fail2ban/jail.local
-# [DEFAULT]
-# banaction = iptables-ipset-proto4
-# EOF
+cat <<EOF > /etc/fail2ban/jail.local
+[DEFAULT]
+ignoreip = 127.0.0.1
+bantime = 86400
+maxretry = 2
+findtime = 1800
+[ssh-iptables]
+enabled = true
+filter = sshd
+action = iptables[name=SSH, port=ssh, protocol=tcp]
+logpath = /var/log/auth.log
+maxretry = 2
+findtime = 3600
+bantime = 32400
+EOF
 
     systemctl enable fail2ban
 
